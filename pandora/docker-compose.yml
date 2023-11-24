@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  pandora-next:
+    image: pengzhile/pandora-next
+    container_name: PandoraNext
+    network_mode: bridge
+    restart: always
+    ports:
+      - "8181:8181"
+    volumes:
+      - ./data:/data
+
+  tokensTool:
+    image: yangclivia/tokenstool:latest
+    container_name: tokensTool
+    restart: always
+    user: root
+    ports:
+      - "8081:8081"
+    network_mode: host
+    pid: host
+    privileged: true
+    volumes:
+      - /pandora/data:/pandora/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: 
+      - --loginUsername=admin
+      - --loginPassword=adminadmin
+      - --deployWay=docker
+      - --deployPosition=/pandora/data
+      - --hotReload=true
+      # --server.port=8182
+      #- --pandoraNext_Url=http://0.0.0.0:8181
+      - --pandoara_Ip=default

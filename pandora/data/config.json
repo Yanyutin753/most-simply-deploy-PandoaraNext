@@ -1,0 +1,10 @@
+{
+  "site_password": "",
+  "bind": "0.0.0.0:8181",
+  "pandoraNext_License": "etYUwfjFn89LNRtbcdFMPlTcdP9hLSJS6wHZEpEQTR0",
+  "setup_password": "123456",
+  "public_share": false,
+  "proxy_url": "",
+  "whitelist": null,
+  "timeout": 600
+}
