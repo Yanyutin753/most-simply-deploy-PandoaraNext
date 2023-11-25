@@ -1,5 +1,6 @@
 {
     "site_password": "",
+    "server_mode": "web",
     "bind": "0.0.0.0:8181",
     "pandoraNext_License": "",
     "setup_password": "123456",
@@ -9,5 +10,4 @@
     "loginPassword": "123456",
     "whitelist": null,
     "timeout": 600
-    "server_mode": "web",
 }
