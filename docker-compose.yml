@@ -29,5 +29,4 @@ services:
       - --deployPosition=/pandora/data
       - --hotReload=true
       # --server.port=8182
-      #- --pandoraNext_Url=http://0.0.0.0:8181
       - --pandoara_Ip=default
