@@ -9,4 +9,5 @@
     "loginPassword": "123456",
     "whitelist": null,
     "timeout": 600
+    "server_mode": "web",
 }
