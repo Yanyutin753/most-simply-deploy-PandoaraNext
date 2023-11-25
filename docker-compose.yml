@@ -25,8 +25,6 @@ services:
       - /pandora/data:/pandora/data
       - /var/run/docker.sock:/var/run/docker.sock
     command: 
-      - --loginUsername=admin
-      - --loginPassword=adminadmin
       - --deployWay=docker
       - --deployPosition=/pandora/data
       - --hotReload=true
