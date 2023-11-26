@@ -16,8 +16,6 @@ services:
     container_name: tokensTool
     restart: always
     user: root
-    ports:
-      - "8081:8081"
     network_mode: host
     pid: host
     privileged: true
