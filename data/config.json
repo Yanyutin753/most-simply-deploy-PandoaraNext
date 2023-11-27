@@ -2,7 +2,6 @@
     "site_password": "",
     "server_mode": "web",
     "bind": "0.0.0.0:8181",
-    "pandoraNext_License": "",
     "setup_password": "123456",
     "public_share": false,
     "proxy_url": "",
