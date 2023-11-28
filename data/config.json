@@ -1,12 +1,21 @@
 {
-    "site_password": "",
-    "server_mode": "web",
-    "bind": "0.0.0.0:8181",
-    "setup_password": "123456",
-    "public_share": false,
-    "proxy_url": "",
-    "loginUsername": "root",
-    "loginPassword": "123456",
-    "whitelist": null,
-    "timeout": 600
+  "bind": "0.0.0.0:8181",
+  "timeout": 600,
+  "proxy_url": "",
+  "license_id": "",
+  "public_share": false,
+  "site_password": "",
+  "setup_password": "",
+  "server_tokens": true,
+  "server_mode": "web",
+  "captcha": {
+    "provider": "",
+    "site_key": "",
+    "site_secret": "",
+    "site_login": false,
+    "setup_login": false,
+    "oai_username": false,
+    "oai_password": false
+  },
+  "whitelist": null
 }
