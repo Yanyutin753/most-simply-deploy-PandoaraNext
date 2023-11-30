@@ -1,5 +1,10 @@
 {
   "bind": "0.0.0.0:8181",
+  "tls": {
+    "enabled": false,
+    "cert_file": "",
+    "key_file": ""
+  },
   "timeout": 600,
   "proxy_url": "",
   "license_id": "",
@@ -7,7 +12,8 @@
   "site_password": "",
   "setup_password": "",
   "server_tokens": true,
-  "server_mode": "web",
+  "proxy_api_prefix": "tokensTool01",
+  "isolated_conv_title": "*",
   "captcha": {
     "provider": "",
     "site_key": "",
