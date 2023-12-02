@@ -10,9 +10,9 @@
   "license_id": "",
   "public_share": false,
   "site_password": "",
-  "setup_password": "123456",
+  "setup_password": "",
   "server_tokens": true,
-  "proxy_api_prefix": "tokensTool01",
+  "proxy_api_prefix": "",
   "isolated_conv_title": "*",
   "captcha": {
     "provider": "",
