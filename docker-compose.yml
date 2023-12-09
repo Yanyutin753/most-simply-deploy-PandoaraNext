@@ -28,4 +28,4 @@ services:
       - --deployPosition=/pandora/data
       - --hotReload=true
       # --server.port=8182
-      - --pandoara_Ip=default
+      - --pandoara_Ip=127.0.0.1
