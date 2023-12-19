@@ -27,5 +27,5 @@ services:
       - --deployWay=docker
       - --deployPosition=/pandora/data
       - --hotReload=true
-      # --server.port=8182
+      - --server.port=8081
       - --pandoara_Ip=127.0.0.1
