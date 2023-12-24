@@ -23,9 +23,10 @@ services:
     volumes:
       - /pandora/data:/pandora/data
       - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker 
     command: 
       - --deployWay=docker
       - --deployPosition=/pandora/data
       - --hotReload=true
       - --server.port=8081
-      - --pandoara_Ip=127.0.0.1
+      - --pandoara_Ip=0.0.0.0
