@@ -29,4 +29,4 @@ services:
       - --deployPosition=/pandora/data
       - --hotReload=true
       - --server.port=8081
-      - --server.servlet.context-path=
+      - --server.servlet.context-path=/
