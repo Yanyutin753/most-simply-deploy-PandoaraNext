@@ -1,32 +1,52 @@
-version: '3'
+version: '3' 
 
-services:
-  pandora-next:
-    image: pengzhile/pandora-next
-    container_name: PandoraNext
-    network_mode: bridge
-    restart: always
+services:  
+  pandora-next:  
+    image: pengzhile/pandora-next  
+    container_name: PandoraNext  
+    network_mode: bridge  
+    restart: always  
+    # 将容器的 8181 端口映射到主机的 8181 端口
     ports:
-      - "8181:8181"
-    volumes:
-      - ./data:/data
+      - "8181:8181"  
+    # 定义数据卷
+    volumes:  
+      # 将主机上的 ./data 目录映射到容器的 /data 目录
+      - ./data:/data  
+      # 将主机上的 ./sessions 目录映射到容器的 /root/.cache/PandoraNext 目录
       - ./sessions:/root/.cache/PandoraNext 
 
-  tokensTool:
-    image: yangclivia/tokenstool:latest
-    container_name: tokensTool
-    restart: always
-    user: root
-    network_mode: host
-    pid: host
-    privileged: true
-    volumes:
-      - /pandora/data:/pandora/data
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /usr/bin/docker:/usr/bin/docker 
-    command: 
-      - --deployWay=docker
-      - --deployPosition=/pandora/data
-      - --hotReload=true
-      - --server.port=8081
+  tokensTool:  
+    # 该服务使用的 Docker 镜像
+    image: yangclivia/tokenstool:latest  
+    # Java 的环境变量 （可适当调节，用copilot可以适当调大点，具体可问gpt了解）
+    environment:  
+      - JAVA_OPTS=-XX:+UseParallelGC -Xms64m -Xmx512m -XX:MaxMetaspaceSize=512m  
+    # 为该服务创建的容器的名称
+    container_name: tokensTool  
+    # 容器总是重新启动
+    restart: always  
+    # 容器运行的用户
+    user: root  
+    # 容器的网络模式
+    network_mode: host  
+    pid: host  
+    privileged: true  
+    volumes:  
+      # 将主机上的 /pandora/data 目录映射到容器的 /pandora/data 目录
+      - /pandora/data:/pandora/data  
+      # 将 Docker 的 Unix 套接字文件映射到容器
+      - /var/run/docker.sock:/var/run/docker.sock  
+      # 将 Docker 的二进制文件映射到容器
+      - /usr/bin/docker:/usr/bin/docker  
+    command:  # 容器启动时运行的命令
+      #docker部署方式
+      - --deployWay=docker 
+      #文件地址
+      - --deployPosition=/pandora/data 
+      #是否开启热重载
+      - --hotReload=true 
+      #开启端口
+      - --server.port=8081 
+      #自定义前缀
       - --server.servlet.context-path=/
